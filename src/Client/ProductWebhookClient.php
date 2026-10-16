@@ -18,7 +18,7 @@ final class ProductWebhookClient extends HttpClient
         if ($items === [] || count($items) > 100) throw new \InvalidArgumentException('Webhook batches must contain 1 to 100 items.');
         $host = null;
         foreach ($items as $item) {
-            if (empty($item['page_url']) || empty($item['page_unique']) || !filter_var($item['page_url'], FILTER_VALIDATE_URL)) {
+            if (!isset($item['page_url'], $item['page_unique']) || !is_string($item['page_url']) || !is_string($item['page_unique']) || trim($item['page_unique']) === '' || strlen($item['page_unique']) > 200 || strlen($item['page_url']) > 1500 || !filter_var($item['page_url'], FILTER_VALIDATE_URL) || !in_array(strtolower((string) parse_url($item['page_url'], PHP_URL_SCHEME)), ['http', 'https'], true) || parse_url($item['page_url'], PHP_URL_HOST) === null) {
                 throw new \InvalidArgumentException('Each item needs a valid absolute page_url and page_unique.');
             }
             $currentHost = parse_url($item['page_url'], PHP_URL_HOST);
