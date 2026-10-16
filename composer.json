@@ -1,5 +1,5 @@
 {
-    "name": "zedx/torob-php",
+    "name": "pmzedx/torob-php",
     "description": "A PHP 8.1+ client and integration toolkit for Torob APIs, powered by Guzzle.",
     "type": "library",
     "license": "MIT",
@@ -13,7 +13,7 @@
     ],
     "authors": [
         {
-            "name": "Zedx",
+            "name": "pmzedx",
             "email": "peimanmahdavi9@gmail.com",
             "role": "Developer"
         }
