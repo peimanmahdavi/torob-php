@@ -1,0 +1,47 @@
+{
+    "name": "zedx/torob-php",
+    "description": "A PHP 8.1+ client and integration toolkit for Torob APIs, powered by Guzzle.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "torob",
+        "torob-api",
+        "guzzle",
+        "php",
+        "product-sync",
+        "ecommerce"
+    ],
+    "authors": [
+        {
+            "name": "Zedx",
+            "email": "peimanmahdavi9@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.8",
+        "firebase/php-jwt": "^6.10"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Torob\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Torob\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
